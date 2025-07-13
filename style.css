@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Chiron Hei HK", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+html {
+  background-color: #000000;
+}
+header {
+  height: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: repeating-conic-gradient(#000000 0% 25%, #ffffff 0% 50%);
+  background-position: 0 0, 55px 55px;
+  background-size: 110px 110px;
+  background-color: #ffffff;
+}
+header div {
+  height: 200px;
+  width: 30%;
+  color: rgb(0, 135, 254);
+  background-image: url('lesserafim.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+}
+#bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #222;
+  padding: 15px 0;
+}
+
+#bar div {
+  margin: 10px 45px;
+  position: relative;
+}
+#bar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+  transition-duration: 0.3s;
+  transition-property: inherit;
+}
+
+#bar a:hover {
+  font-size: 35px;
+  color: #7BA6DE;
+}
+
+#bar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: #7BA6DE;
+  transform: scaleX(0);
+  transform-origin: bottom;
+  transition: transform 0.5s ease;
+}
+
+#bar a:hover::after {
+  transform: scaleX(1);
+}
+
+#latest-album {
+  display: inline-block;
+  width: 50%;
+  background-color: #000000;
+  text-align: center;
+  color: #ffffff;
+  border-style: solid;
+  border-width:1px;
+  border-color: #000000;
+}
+
+#latest-album div {
+  margin: 0;
+}
+
+#latest-album div h1 {
+  font-size: 2.5rem;
+  padding: 20px;
+  margin-top: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  color: white;
+  letter-spacing: 1.5px;
+  border-radius: 15px;
+  border-style: solid;
+  border-width:5px;
+  border-color: #000000;
+  transition-timing-function: inherit;
+  transition-duration: 0.5s;
+  
+}
+#latest-album div h1:hover {
+  border-color: #fff;
+}
+#latest-album img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+}
+
+#latest-album div {
+  margin: 10px 0;
+}
+
+#latest-album a {
+  width: 200px;
+  display: inline-block;
+  padding: 12px 26px;
+  margin: 6px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#latest-album a:hover {
+  background-color: #7BA6DE;
+  color: #ffffff;
+  transform: scale(1.06);
+}
+
+#imgplay {
+  float: right;
+  background-color: rgb(0, 0, 0);
+  width: 50%;
+  height: 700px;
+}
+
+.slider {
+  position: relative;
+  width: 70%;
+  height: 70%;
+}
+
+.slide {
+  border-style: solid;
+  border-radius: 20px; 
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+@media screen and (max-width: 900px) {
+  .slide {
+    object-fit:contain;
+  }
+}
+
+@media screen and (max-width: 600px) {
+      header div {
+        height: 200px;
+        width: 80%;
+        color: rgb(0, 135, 254);
+        background-image: url('lesserafim.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: black;
+        border-style: solid;
+        border-color: black;
+        border-radius: 30px;
+      }
+      #bar {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #bar div {
+        margin: 5px 0;
+      }
+
+      #bar a {
+        font-size: 18px;
+      }
+      #bar a:hover {
+      font-size: 23px;
+      }
+      #bar a::after {
+      left: -150%;
+      width: 400%;
+      height: 3px;
+      transition: transform 0.2s ease;
+      }
+      #latest-album {
+      display: inline-block;
+      width: 100%;
+      background-color: #000000;
+      text-align: center;
+      color: #ffffff;
+      border-style: solid;
+      border-width:1px;
+      border-color: #000000;
+      }
+      #imgplay {
+        width: 100%;
+        height: 400px;
+      }
+      .slider {
+        width: 100%;
+        height: 100%;
+      }
+      .slide {
+        top: 0;
+        left: 0;
+        object-fit:cover;
+      }
+    }

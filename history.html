@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>歷程介紹</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Noto Sans TC", sans-serif;
+      margin: 0;
+      background-color: #111;
+      color: white;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 36px;
+      color: #7BA6DE;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 0 auto;
+      padding: 20px 0;
+      max-width: 900px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background-color: #7BA6DE;
+    }
+
+    .event {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 60px;
+      padding-left: 60px;
+      gap: 20px;
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.8s ease-out;
+    }
+
+    .event.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .event-content {
+      flex: 1;
+    }
+
+    .event h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      color: #7BA6DE;
+    }
+
+    .event p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .event img {
+      width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    @media screen and (max-width: 600px) {
+      .event {
+        flex-direction: column;
+        padding-left: 40px;
+      }
+
+      .event img {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 10px;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>團體歷程</h1>
+
+  <div class="timeline">
+
+    <div class="event">
+      <div class="event-content">
+        <h2>2022 年 5 月</h2>
+        <p>正式出道，首張迷你專輯《FEARLESS》推出，展現強烈的自信概念。</p>
+      </div>
+      <img src="fearless.jpg" alt="FEARLESS 專輯照">
+    </div>
+
+    <div class="event">
+      <div class="event-content">
+        <h2>2022 年 10 月</h2>
+        <p>第二張迷你專輯《ANTIFRAGILE》發行，主打堅強、面對挑戰的成長主題。</p>
+      </div>
+      <img src="antifragile.jpg" alt="ANTIFRAGILE 專輯照">
+    </div>
+
+    <div class="event">
+      <div class="event-content">
+        <h2>2023 年 5 月</h2>
+        <p>發表首張完整專輯《UNFORGIVEN》，成為年度熱門話題。</p>
+      </div>
+      <img src="unforgiven.jpg" alt="UNFORGIVEN 專輯照">
+    </div>
+
+    <div class="event">
+      <div class="event-content">
+        <h2>2024 年 3 月</h2>
+        <p>展開首次世界巡迴演唱會，巡演足跡遍及亞洲、歐洲與北美。</p>
+      </div>
+      <img src="worldtour.jpg" alt="巡演現場照">
+    </div>
+
+  </div>
+
+  <!-- JS 動畫邏輯 -->
+  <script>
+    const events = document.querySelectorAll('.event');
+
+    function checkVisibility() {
+      const triggerBottom = window.innerHeight * 0.85;
+      events.forEach(event => {
+        const eventTop = event.getBoundingClientRect().top;
+        if (eventTop < triggerBottom) {
+          event.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    window.addEventListener('load', checkVisibility);
+  </script>
+
+</body>
+</html>
