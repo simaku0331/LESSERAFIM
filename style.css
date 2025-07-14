@@ -155,6 +155,7 @@ header div {
   background-color: rgb(0, 0, 0);
   width: 100%;
   height: 700px;
+  margin-bottom: 100px;
 }
 
 .slider {
@@ -182,6 +183,53 @@ header div {
   opacity: 1;
   z-index: 1;
 }
+
+footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    padding: 30px 20px 15px;
+    font-size: 16px;
+    border-top: 1px solid #333;
+  }
+
+  .footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 15px;
+  }
+
+  .footer-left h2 {
+    margin: 0;
+    font-size: 28px;
+    color: #7BA6DE;
+  }
+
+  .footer-left p {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #aaa;
+  }
+
+  .footer-right a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #7BA6DE;
+    transition: color 0.3s ease;
+  }
+
+  .footer-right a:hover {
+    color: #ffffff;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+  }
 @media screen and (max-width: 900px) {
   .slide {
     object-fit:contain;
@@ -262,4 +310,17 @@ header div {
     width: 300px;
     max-width: 300px;
   }
+  .footer-wrapper {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+
+    .footer-right {
+      margin-top: 12px;
+    }
+
+    .footer-right a {
+      margin: 0 10px;
+    }
 }
